@@ -75,7 +75,17 @@ footer>div:last-child>div{padding:18px 24px 22px !important;gap:6px !important}
 @media (min-width:761px){#nav a:not(:last-child){text-decoration:underline !important;text-decoration-color:transparent !important;text-decoration-thickness:2px;text-underline-offset:8px;transition:text-decoration-color .15s}#nav a:not(:last-child):hover,#nav a:not(:last-child):focus-visible{text-decoration-color:#8C6B35 !important}}
 @media (prefers-reduced-motion:no-preference){.rv{opacity:0;transform:translateY(28px);transition:opacity .7s ease,transform .7s ease}.rv.in{opacity:1;transform:none}}
 @media (min-width:641px){.avail{width:fit-content !important;max-width:100% !important;grid-template-columns:repeat(3,minmax(0,220px)) !important}}
-.rooms-grid{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:28px}.rooms-grid .rc{min-width:0}.rooms-grid .rc{grid-column:span 4}@media (min-width:1001px){.rooms-grid .rc:nth-child(n+4){grid-column:span 3 !important}.rooms-grid .rc:nth-child(-n+3){grid-column:span 4 !important}}@media (max-width:1000px){.rooms-grid .rc{grid-column:span 6 !important}}@media (max-width:640px){.rooms-grid .rc{grid-column:1/-1 !important}.rooms-grid .rc img{height:230px !important}}
+.rooms-track{display:flex;gap:24px;overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth;-webkit-overflow-scrolling:touch;padding:4px 2px 18px;scrollbar-width:thin;scrollbar-color:#8C6B35 #E4DAC6;outline-offset:4px}
+.rooms-track .rc{flex:0 0 min(380px,84%);scroll-snap-align:start;min-width:0}
+.rooms-ctl{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-top:18px}
+.rooms-count{font-size:15px;color:#4A3F34}
+.rooms-btns{display:flex;gap:10px}
+.rooms-btns button{width:48px;height:48px;border-radius:999px;border:2px solid #8C6B35;background:#FFFFFF;color:#7A5A27;cursor:pointer;display:flex;align-items:center;justify-content:center}
+.rooms-btns button:hover:not(:disabled){background:#8C6B35;color:#FFFFFF}
+.rooms-btns button:disabled{opacity:.35;cursor:default}
+.rooms-btns button:focus-visible{outline:3px solid #2C3A57;outline-offset:3px}
+@media (prefers-reduced-motion:reduce){.rooms-track{scroll-behavior:auto}}
+@media (max-width:640px){.rooms-track .rc img{height:230px !important}}
 </style>
 </head>
 <body>
@@ -239,8 +249,8 @@ document.addEventListener('keydown',function(e){if(e.key==='Escape')set(false)})
 </div>
 <p style="flex:1 1 320px;margin:0;color:#4A3F34;max-width:440px;text-wrap:pretty">Pick your dates and book securely online, or give the team a ring. Every room has Wi-Fi, a flat-screen TV, heating, and tea and coffee making facilities.</p>
 </div>
-<div class="rooms-grid">
-<article class="rc" style="grid-column:span 4;background:#FFFFFF;border:1px solid #E4DAC6;border-radius:10px;overflow:hidden;display:flex;flex-direction:column">
+<div class="rooms-track" id="rooms-track" tabindex="0" role="region" aria-label="Our rooms, scroll sideways to see more">
+<article class="rc" style="background:#FFFFFF;border:1px solid #E4DAC6;border-radius:10px;overflow:hidden;display:flex;flex-direction:column">
 <img loading="lazy" decoding="async" width="1200" height="900" src="images/room-king.jpg" alt="A king room with a dark blue feature wall, a window onto the garden, and a tea and coffee tray" style="display:block;width:100%;height:250px;object-fit:cover;background:#E8DFCE">
 <div style="padding:22px 24px 26px;display:flex;flex-direction:column;gap:10px;flex:1">
 <h3 style="margin:0;font-family:'Fraunces',Georgia,serif;font-weight:600;font-size:24px">King Room</h3>
@@ -249,7 +259,7 @@ document.addEventListener('keydown',function(e){if(e.key==='Escape')set(false)})
 <a href="https://beds24.com/booking2.php?propid=254189" target="_blank" rel="noopener" style="font-weight:700;color:#7A5A27;padding:10px 0;display:inline-block">Check availability &rarr;</a>
 </div>
 </article>
-<article class="rc" style="grid-column:span 4;background:#FFFFFF;border:1px solid #E4DAC6;border-radius:10px;overflow:hidden;display:flex;flex-direction:column">
+<article class="rc" style="background:#FFFFFF;border:1px solid #E4DAC6;border-radius:10px;overflow:hidden;display:flex;flex-direction:column">
 <img loading="lazy" decoding="async" width="1200" height="900" src="images/room-double.jpg" alt="A double room with a mauve feature wall, bedside tables and a chest of drawers" style="display:block;width:100%;height:250px;object-fit:cover;background:#E8DFCE">
 <div style="padding:22px 24px 26px;display:flex;flex-direction:column;gap:10px;flex:1">
 <h3 style="margin:0;font-family:'Fraunces',Georgia,serif;font-weight:600;font-size:24px">Double Room</h3>
@@ -258,7 +268,7 @@ document.addEventListener('keydown',function(e){if(e.key==='Escape')set(false)})
 <a href="https://beds24.com/booking2.php?propid=254189" target="_blank" rel="noopener" style="font-weight:700;color:#7A5A27;padding:10px 0;display:inline-block">Check availability &rarr;</a>
 </div>
 </article>
-<article class="rc" style="grid-column:span 4;background:#FFFFFF;border:1px solid #E4DAC6;border-radius:10px;overflow:hidden;display:flex;flex-direction:column">
+<article class="rc" style="background:#FFFFFF;border:1px solid #E4DAC6;border-radius:10px;overflow:hidden;display:flex;flex-direction:column">
 <img loading="lazy" decoding="async" width="1200" height="900" src="images/room-twin.jpg" alt="A twin room with two single beds and a window onto the trees" style="display:block;width:100%;height:250px;object-fit:cover;background:#E8DFCE">
 <div style="padding:22px 24px 26px;display:flex;flex-direction:column;gap:10px;flex:1">
 <h3 style="margin:0;font-family:'Fraunces',Georgia,serif;font-weight:600;font-size:24px">Twin Room</h3>
@@ -267,7 +277,7 @@ document.addEventListener('keydown',function(e){if(e.key==='Escape')set(false)})
 <a href="https://beds24.com/booking2.php?propid=254189" target="_blank" rel="noopener" style="font-weight:700;color:#7A5A27;padding:10px 0;display:inline-block">Check availability &rarr;</a>
 </div>
 </article>
-<article class="rc" style="grid-column:span 3;background:#FFFFFF;border:1px solid #E4DAC6;border-radius:10px;overflow:hidden;display:flex;flex-direction:column">
+<article class="rc" style="background:#FFFFFF;border:1px solid #E4DAC6;border-radius:10px;overflow:hidden;display:flex;flex-direction:column">
 <img loading="lazy" decoding="async" width="1200" height="900" src="images/room-single-1.jpg" alt="A single room with a dark upholstered bed and an archway to the en-suite" style="display:block;width:100%;height:250px;object-fit:cover;background:#E8DFCE">
 <div style="padding:22px 24px 26px;display:flex;flex-direction:column;gap:10px;flex:1">
 <h3 style="margin:0;font-family:'Fraunces',Georgia,serif;font-weight:600;font-size:24px">Single Room</h3>
@@ -276,7 +286,7 @@ document.addEventListener('keydown',function(e){if(e.key==='Escape')set(false)})
 <a href="https://beds24.com/booking2.php?propid=254189" target="_blank" rel="noopener" style="font-weight:700;color:#7A5A27;padding:10px 0;display:inline-block">Check availability &rarr;</a>
 </div>
 </article>
-<article class="rc" style="grid-column:span 3;background:#FFFFFF;border:1px solid #E4DAC6;border-radius:10px;overflow:hidden;display:flex;flex-direction:column">
+<article class="rc" style="background:#FFFFFF;border:1px solid #E4DAC6;border-radius:10px;overflow:hidden;display:flex;flex-direction:column">
 <img loading="lazy" decoding="async" width="1200" height="900" src="images/room-single-2.jpg" alt="A single room with an oak chest of drawers, a basin and a window onto the garden" style="display:block;width:100%;height:250px;object-fit:cover;background:#E8DFCE">
 <div style="padding:22px 24px 26px;display:flex;flex-direction:column;gap:10px;flex:1">
 <h3 style="margin:0;font-family:'Fraunces',Georgia,serif;font-weight:600;font-size:24px">Single Room</h3>
@@ -285,7 +295,7 @@ document.addEventListener('keydown',function(e){if(e.key==='Escape')set(false)})
 <a href="https://beds24.com/booking2.php?propid=254189" target="_blank" rel="noopener" style="font-weight:700;color:#7A5A27;padding:10px 0;display:inline-block">Check availability &rarr;</a>
 </div>
 </article>
-<article class="rc" style="grid-column:span 3;background:#FFFFFF;border:1px solid #E4DAC6;border-radius:10px;overflow:hidden;display:flex;flex-direction:column">
+<article class="rc" style="background:#FFFFFF;border:1px solid #E4DAC6;border-radius:10px;overflow:hidden;display:flex;flex-direction:column">
 <img loading="lazy" decoding="async" width="1200" height="900" src="images/room-family-1.jpg" alt="A spacious family room with a Super King bed, a sofa and a mauve feature wall" style="display:block;width:100%;height:250px;object-fit:cover;background:#E8DFCE">
 <div style="padding:22px 24px 26px;display:flex;flex-direction:column;gap:10px;flex:1">
 <h3 style="margin:0;font-family:'Fraunces',Georgia,serif;font-weight:600;font-size:24px">Superior Family Room</h3>
@@ -294,7 +304,7 @@ document.addEventListener('keydown',function(e){if(e.key==='Escape')set(false)})
 <a href="https://beds24.com/booking2.php?propid=254189" target="_blank" rel="noopener" style="font-weight:700;color:#7A5A27;padding:10px 0;display:inline-block">Check availability &rarr;</a>
 </div>
 </article>
-<article class="rc" style="grid-column:span 3;background:#FFFFFF;border:1px solid #E4DAC6;border-radius:10px;overflow:hidden;display:flex;flex-direction:column">
+<article class="rc" style="background:#FFFFFF;border:1px solid #E4DAC6;border-radius:10px;overflow:hidden;display:flex;flex-direction:column">
 <img loading="lazy" decoding="async" width="1200" height="900" src="images/room-family-2.jpg" alt="A family room under the eaves with a large bed, a TV and a tea and coffee area" style="display:block;width:100%;height:250px;object-fit:cover;background:#E8DFCE">
 <div style="padding:22px 24px 26px;display:flex;flex-direction:column;gap:10px;flex:1">
 <h3 style="margin:0;font-family:'Fraunces',Georgia,serif;font-weight:600;font-size:24px">Family Room</h3>
@@ -304,6 +314,32 @@ document.addEventListener('keydown',function(e){if(e.key==='Escape')set(false)})
 </div>
 </article>
 </div>
+<div class="rooms-ctl">
+<p class="rooms-count" id="rooms-count" aria-live="polite">Showing rooms 1 to 3 of 7</p>
+<div class="rooms-btns">
+<button type="button" id="rooms-prev" aria-label="Previous rooms"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg></button>
+<button type="button" id="rooms-next" aria-label="Next rooms"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg></button>
+</div>
+</div>
+<script>
+(function(){
+var t=document.getElementById('rooms-track'),p=document.getElementById('rooms-prev'),n=document.getElementById('rooms-next'),c=document.getElementById('rooms-count');
+if(!t||!p||!n)return;
+var cards=[].slice.call(t.children);
+function step(){var a=cards[0],b=cards[1];return b?b.offsetLeft-a.offsetLeft:a.offsetWidth}
+function update(){
+var s=step(),max=t.scrollWidth-t.clientWidth,first=Math.round(t.scrollLeft/s),vis=Math.max(1,Math.round(t.clientWidth/s)),last=Math.min(cards.length,first+vis);
+p.disabled=t.scrollLeft<=2;n.disabled=t.scrollLeft>=max-2;
+if(t.scrollLeft>=max-2)last=cards.length;
+c.textContent=(first+1===last?'Showing room '+last:'Showing rooms '+(first+1)+' to '+last)+' of '+cards.length;
+}
+p.addEventListener('click',function(){t.scrollBy({left:-step()*Math.max(1,Math.floor(t.clientWidth/step())),behavior:'smooth'})});
+n.addEventListener('click',function(){t.scrollBy({left:step()*Math.max(1,Math.floor(t.clientWidth/step())),behavior:'smooth'})});
+t.addEventListener('scroll',function(){window.requestAnimationFrame(update)},{passive:true});
+t.addEventListener('keydown',function(e){if(e.key==='ArrowRight'){e.preventDefault();n.click()}if(e.key==='ArrowLeft'){e.preventDefault();p.click()}});
+window.addEventListener('resize',update);update();
+})();
+</script>
 </section>
 </div>
 
