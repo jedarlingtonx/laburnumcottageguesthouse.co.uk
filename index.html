@@ -75,15 +75,14 @@ footer>div:last-child>div{padding:18px 24px 22px !important;gap:6px !important}
 @media (min-width:761px){#nav a:not(:last-child){text-decoration:underline !important;text-decoration-color:transparent !important;text-decoration-thickness:2px;text-underline-offset:8px;transition:text-decoration-color .15s}#nav a:not(:last-child):hover,#nav a:not(:last-child):focus-visible{text-decoration-color:#8C6B35 !important}}
 @media (prefers-reduced-motion:no-preference){.rv{opacity:0;transform:translateY(28px);transition:opacity .7s ease,transform .7s ease}.rv.in{opacity:1;transform:none}}
 @media (min-width:641px){.avail{width:fit-content !important;max-width:100% !important;grid-template-columns:repeat(3,minmax(0,220px)) !important}}
-.rooms-track{display:flex;gap:24px;overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth;-webkit-overflow-scrolling:touch;padding:4px 2px 18px;scrollbar-width:thin;scrollbar-color:#8C6B35 #E4DAC6;outline-offset:4px}
-.rooms-track .rc{flex:0 0 min(380px,84%);scroll-snap-align:start;min-width:0}
+.rooms-track{display:flex;gap:24px;overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth;-webkit-overflow-scrolling:touch;padding:4px 0 18px;scrollbar-width:thin;scrollbar-color:#8C6B35 #E4DAC6;outline-offset:4px}
+.rooms-track .rc{flex:0 0 calc((100% - 48px)/3);scroll-snap-align:start;min-width:0}@media (max-width:1000px){.rooms-track .rc{flex-basis:calc((100% - 24px)/2)}}@media (max-width:640px){.rooms-track .rc{flex-basis:100%}}
 @media (prefers-reduced-motion:reduce){.rooms-track{scroll-behavior:auto}}
 @media (max-width:640px){.rooms-track .rc img{height:230px !important}}
 .rooms-wrap{position:relative}
 .rb{position:absolute;top:254px;transform:translateY(-50%);z-index:3;width:52px;height:52px;border-radius:999px;border:2px solid #8C6B35;background:#FFFFFF;color:#7A5A27;cursor:pointer;display:flex;align-items:center;justify-content:center;box-shadow:0 8px 20px -8px rgba(60,40,20,.45)}
 .rb-prev{left:-26px}.rb-next{right:-26px}
 .rb:hover:not(:disabled){background:#8C6B35;color:#FFFFFF}
-.rb:disabled{opacity:0;pointer-events:none}
 .rb:focus-visible{outline:3px solid #2C3A57;outline-offset:3px}
 .sr-only{position:absolute;width:1px;height:1px;margin:-1px;padding:0;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
 @media (max-width:640px){.rb{top:234px;width:44px;height:44px}.rb-prev{left:-8px}.rb-next{right:-8px}}
@@ -328,12 +327,12 @@ var cards=[].slice.call(t.children);
 function step(){var a=cards[0],b=cards[1];return b?b.offsetLeft-a.offsetLeft:a.offsetWidth}
 function update(){
 var s=step(),max=t.scrollWidth-t.clientWidth,first=Math.round(t.scrollLeft/s),vis=Math.max(1,Math.round(t.clientWidth/s)),last=Math.min(cards.length,first+vis);
-p.disabled=t.scrollLeft<=2;n.disabled=t.scrollLeft>=max-2;
 if(t.scrollLeft>=max-2)last=cards.length;
 c.textContent=(first+1===last?'Showing room '+last:'Showing rooms '+(first+1)+' to '+last)+' of '+cards.length;
 }
-p.addEventListener('click',function(){t.scrollBy({left:-step()*Math.max(1,Math.floor(t.clientWidth/step())),behavior:'smooth'})});
-n.addEventListener('click',function(){t.scrollBy({left:step()*Math.max(1,Math.floor(t.clientWidth/step())),behavior:'smooth'})});
+function page(){return step()*Math.max(1,Math.floor((t.clientWidth+4)/step()))}
+p.addEventListener('click',function(){if(t.scrollLeft<=2){t.scrollTo({left:t.scrollWidth,behavior:'smooth'})}else{t.scrollBy({left:-page(),behavior:'smooth'})}});
+n.addEventListener('click',function(){if(t.scrollLeft>=t.scrollWidth-t.clientWidth-2){t.scrollTo({left:0,behavior:'smooth'})}else{t.scrollBy({left:page(),behavior:'smooth'})}});
 t.addEventListener('scroll',function(){window.requestAnimationFrame(update)},{passive:true});
 t.addEventListener('keydown',function(e){if(e.key==='ArrowRight'){e.preventDefault();n.click()}if(e.key==='ArrowLeft'){e.preventDefault();p.click()}});
 window.addEventListener('resize',update);update();
