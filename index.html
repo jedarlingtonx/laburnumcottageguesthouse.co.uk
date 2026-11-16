@@ -330,7 +330,7 @@ var s=step(),max=t.scrollWidth-t.clientWidth,first=Math.round(t.scrollLeft/s),vi
 if(t.scrollLeft>=max-2)last=cards.length;
 c.textContent=(first+1===last?'Showing room '+last:'Showing rooms '+(first+1)+' to '+last)+' of '+cards.length;
 }
-function page(){return step()*Math.max(1,Math.floor((t.clientWidth+4)/step()))}
+function page(){return step()*Math.max(1,Math.floor((t.clientWidth+30)/step()))}
 p.addEventListener('click',function(){if(t.scrollLeft<=2){t.scrollTo({left:t.scrollWidth,behavior:'smooth'})}else{t.scrollBy({left:-page(),behavior:'smooth'})}});
 n.addEventListener('click',function(){if(t.scrollLeft>=t.scrollWidth-t.clientWidth-2){t.scrollTo({left:0,behavior:'smooth'})}else{t.scrollBy({left:page(),behavior:'smooth'})}});
 t.addEventListener('scroll',function(){window.requestAnimationFrame(update)},{passive:true});
