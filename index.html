@@ -75,6 +75,7 @@ footer>div:last-child>div{padding:18px 24px 22px !important;gap:6px !important}
 @media (min-width:761px){#nav a:not(:last-child){text-decoration:underline !important;text-decoration-color:transparent !important;text-decoration-thickness:2px;text-underline-offset:8px;transition:text-decoration-color .15s}#nav a:not(:last-child):hover,#nav a:not(:last-child):focus-visible{text-decoration-color:#8C6B35 !important}}
 @media (prefers-reduced-motion:no-preference){.rv{opacity:0;transform:translateY(28px);transition:opacity .7s ease,transform .7s ease}.rv.in{opacity:1;transform:none}}
 @media (min-width:641px){.avail{width:fit-content !important;max-width:100% !important;grid-template-columns:repeat(3,minmax(0,220px)) !important}}
+.rooms-grid{display:grid;grid-template-columns:repeat(12,1fr);gap:28px}.rooms-grid .rc{grid-column:span 4}@media (min-width:1001px){.rooms-grid .rc:nth-child(n+4){grid-column:span 3 !important}.rooms-grid .rc:nth-child(-n+3){grid-column:span 4 !important}}@media (max-width:1000px){.rooms-grid .rc{grid-column:span 6 !important}}@media (max-width:640px){.rooms-grid .rc{grid-column:1/-1 !important}.rooms-grid .rc img{height:230px !important}}
 </style>
 </head>
 <body>
@@ -231,59 +232,77 @@ document.addEventListener('keydown',function(e){if(e.key==='Escape')set(false)})
 <!-- Rooms -->
 <div style="background:#F1E8D6">
 <section id="rooms" style="max-width:1280px;margin:0 auto;padding:88px 32px 96px">
-<div style="display:flex;flex-wrap:wrap;gap:48px 64px;align-items:flex-start">
-<div style="flex:1 1 360px;min-width:0">
+<div style="display:flex;flex-wrap:wrap;gap:16px 48px;align-items:flex-end;justify-content:space-between;margin-bottom:36px">
+<div style="flex:1 1 420px">
 <p style="margin:0 0 16px;font-size:13px;letter-spacing:0.18em;text-transform:uppercase;font-weight:700;color:#7A5A27">Rooms</p>
-<h2 style="margin:0 0 22px;font-family:'Fraunces',Georgia,serif;font-weight:400;font-size:44px;line-height:1.1;letter-spacing:-0.015em;text-wrap:balance">Seven en-suite rooms, from singles to family rooms.</h2>
-<p style="margin:0 0 28px;color:#4A3F34;max-width:440px;text-wrap:pretty">Pick your dates and book securely online, or give the team a ring. Every room is en-suite, with Wi-Fi, a flat-screen TV, heating, and tea and coffee making facilities.</p>
-<div style="display:grid;gap:16px">
-<img loading="lazy" decoding="async" width="1024" height="768" src="images/bedroom.jpg" alt="Tartan cushions with a stag design on a bed" style="display:block;width:100%;height:300px;object-fit:cover;border-radius:8px;background:#E8DFCE">
-<img loading="lazy" decoding="async" width="1024" height="768" src="images/ensuite.jpg" alt="A modern en-suite with a wall-hung basin, a round mirror and exposed brick" style="display:block;width:100%;height:300px;object-fit:cover;border-radius:8px;background:#E8DFCE">
+<h2 style="margin:0;font-family:'Fraunces',Georgia,serif;font-weight:400;font-size:44px;line-height:1.1;letter-spacing:-0.015em;text-wrap:balance">Seven en-suite rooms, from singles to family rooms.</h2>
 </div>
+<p style="flex:1 1 320px;margin:0;color:#4A3F34;max-width:440px;text-wrap:pretty">Pick your dates and book securely online, or give the team a ring. Every room has Wi-Fi, a flat-screen TV, heating, and tea and coffee making facilities.</p>
 </div>
-<div style="flex:1 1 460px;min-width:0">
-<article style="border-top:1px solid #D9CEB8;padding:22px 0 24px;display:flex;flex-wrap:wrap;gap:6px 24px;align-items:baseline;justify-content:space-between">
-<div style="flex:1 1 300px;min-width:0">
-<h3 style="margin:0 0 4px;font-family:'Fraunces',Georgia,serif;font-weight:600;font-size:24px">Single Room</h3>
-<p style="margin:0 0 8px;font-size:15px;color:#6B5F52">Sleeps 1 &middot; 1 bed &middot; Two single rooms</p>
-<p style="margin:0;font-size:16px;color:#4A3F34">A single room with everything you are used to: Wi-Fi, TV, heating, and tea and coffee making.</p>
+<div class="rooms-grid">
+<article class="rc" style="grid-column:span 4;background:#FFFFFF;border:1px solid #E4DAC6;border-radius:10px;overflow:hidden;display:flex;flex-direction:column">
+<img loading="lazy" decoding="async" width="1200" height="900" src="images/room-king.jpg" alt="A king room with a dark blue feature wall, a window onto the garden, and a tea and coffee tray" style="display:block;width:100%;height:250px;object-fit:cover;background:#E8DFCE">
+<div style="padding:22px 24px 26px;display:flex;flex-direction:column;gap:10px;flex:1">
+<h3 style="margin:0;font-family:'Fraunces',Georgia,serif;font-weight:600;font-size:24px">King Room</h3>
+<p style="margin:0;font-size:15px;color:#6B5F52">Sleeps 2 &middot; 1 bed &middot; Garden view</p>
+<p style="margin:0;font-size:16px;color:#4A3F34;flex:1">A king room looking out over the garden, with Wi-Fi, a flat-screen TV, heating, and tea and coffee making.</p>
+<a href="https://beds24.com/booking2.php?propid=254189" target="_blank" rel="noopener" style="font-weight:700;color:#7A5A27;padding:10px 0;display:inline-block">Check availability &rarr;</a>
 </div>
-<a href="https://beds24.com/booking2.php?propid=254189" target="_blank" rel="noopener" style="font-weight:700;color:#7A5A27;padding:10px 0;display:inline-block;white-space:nowrap">Check availability &rarr;</a>
 </article>
-<article style="border-top:1px solid #D9CEB8;padding:22px 0 24px;display:flex;flex-wrap:wrap;gap:6px 24px;align-items:baseline;justify-content:space-between">
-<div style="flex:1 1 300px;min-width:0">
-<h3 style="margin:0 0 4px;font-family:'Fraunces',Georgia,serif;font-weight:600;font-size:24px">Twin Room</h3>
-<p style="margin:0 0 8px;font-size:15px;color:#6B5F52">Sleeps 2 &middot; 2 beds</p>
-<p style="margin:0;font-size:16px;color:#4A3F34">Two single beds, en-suite, with Wi-Fi, a flat-screen TV and tea and coffee making.</p>
+<article class="rc" style="grid-column:span 4;background:#FFFFFF;border:1px solid #E4DAC6;border-radius:10px;overflow:hidden;display:flex;flex-direction:column">
+<img loading="lazy" decoding="async" width="1200" height="900" src="images/room-double.jpg" alt="A double room with a mauve feature wall, bedside tables and a chest of drawers" style="display:block;width:100%;height:250px;object-fit:cover;background:#E8DFCE">
+<div style="padding:22px 24px 26px;display:flex;flex-direction:column;gap:10px;flex:1">
+<h3 style="margin:0;font-family:'Fraunces',Georgia,serif;font-weight:600;font-size:24px">Double Room</h3>
+<p style="margin:0;font-size:15px;color:#6B5F52">Sleeps 2 &middot; 1 bed</p>
+<p style="margin:0;font-size:16px;color:#4A3F34;flex:1">A comfortable double room, en-suite, with Wi-Fi, a flat-screen TV, heating, and tea and coffee making.</p>
+<a href="https://beds24.com/booking2.php?propid=254189" target="_blank" rel="noopener" style="font-weight:700;color:#7A5A27;padding:10px 0;display:inline-block">Check availability &rarr;</a>
 </div>
-<a href="https://beds24.com/booking2.php?propid=254189" target="_blank" rel="noopener" style="font-weight:700;color:#7A5A27;padding:10px 0;display:inline-block;white-space:nowrap">Check availability &rarr;</a>
 </article>
-<article style="border-top:1px solid #D9CEB8;padding:22px 0 24px;display:flex;flex-wrap:wrap;gap:6px 24px;align-items:baseline;justify-content:space-between">
-<div style="flex:1 1 300px;min-width:0">
-<h3 style="margin:0 0 4px;font-family:'Fraunces',Georgia,serif;font-weight:600;font-size:24px">Double Room</h3>
-<p style="margin:0 0 8px;font-size:15px;color:#6B5F52">Sleeps 2 &middot; 1 bed</p>
-<p style="margin:0;font-size:16px;color:#4A3F34">A comfortable double room, en-suite, with Wi-Fi, a flat-screen TV and tea and coffee making.</p>
+<article class="rc" style="grid-column:span 4;background:#FFFFFF;border:1px solid #E4DAC6;border-radius:10px;overflow:hidden;display:flex;flex-direction:column">
+<img loading="lazy" decoding="async" width="1200" height="900" src="images/room-twin.jpg" alt="A twin room with two single beds and a window onto the trees" style="display:block;width:100%;height:250px;object-fit:cover;background:#E8DFCE">
+<div style="padding:22px 24px 26px;display:flex;flex-direction:column;gap:10px;flex:1">
+<h3 style="margin:0;font-family:'Fraunces',Georgia,serif;font-weight:600;font-size:24px">Twin Room</h3>
+<p style="margin:0;font-size:15px;color:#6B5F52">Sleeps 2 &middot; 2 beds</p>
+<p style="margin:0;font-size:16px;color:#4A3F34;flex:1">Two single beds, en-suite, with Wi-Fi, a flat-screen TV, heating, and tea and coffee making.</p>
+<a href="https://beds24.com/booking2.php?propid=254189" target="_blank" rel="noopener" style="font-weight:700;color:#7A5A27;padding:10px 0;display:inline-block">Check availability &rarr;</a>
 </div>
-<a href="https://beds24.com/booking2.php?propid=254189" target="_blank" rel="noopener" style="font-weight:700;color:#7A5A27;padding:10px 0;display:inline-block;white-space:nowrap">Check availability &rarr;</a>
 </article>
-<article style="border-top:1px solid #D9CEB8;padding:22px 0 24px;display:flex;flex-wrap:wrap;gap:6px 24px;align-items:baseline;justify-content:space-between">
-<div style="flex:1 1 300px;min-width:0">
-<h3 style="margin:0 0 4px;font-family:'Fraunces',Georgia,serif;font-weight:600;font-size:24px">King Room</h3>
-<p style="margin:0 0 8px;font-size:15px;color:#6B5F52">Sleeps 2 &middot; 1 bed &middot; Garden view</p>
-<p style="margin:0;font-size:16px;color:#4A3F34">A king room with a view over the garden, plus Wi-Fi, a flat-screen TV, heating, and tea and coffee making.</p>
+<article class="rc" style="grid-column:span 3;background:#FFFFFF;border:1px solid #E4DAC6;border-radius:10px;overflow:hidden;display:flex;flex-direction:column">
+<img loading="lazy" decoding="async" width="1200" height="900" src="images/room-single-1.jpg" alt="A single room with a dark upholstered bed and an archway to the en-suite" style="display:block;width:100%;height:250px;object-fit:cover;background:#E8DFCE">
+<div style="padding:22px 24px 26px;display:flex;flex-direction:column;gap:10px;flex:1">
+<h3 style="margin:0;font-family:'Fraunces',Georgia,serif;font-weight:600;font-size:24px">Single Room</h3>
+<p style="margin:0;font-size:15px;color:#6B5F52">Sleeps 1 &middot; 1 bed</p>
+<p style="margin:0;font-size:16px;color:#4A3F34;flex:1">Everything you are used to: Wi-Fi, a flat-screen TV, heating, tea and coffee making, and an en-suite.</p>
+<a href="https://beds24.com/booking2.php?propid=254189" target="_blank" rel="noopener" style="font-weight:700;color:#7A5A27;padding:10px 0;display:inline-block">Check availability &rarr;</a>
 </div>
-<a href="https://beds24.com/booking2.php?propid=254189" target="_blank" rel="noopener" style="font-weight:700;color:#7A5A27;padding:10px 0;display:inline-block;white-space:nowrap">Check availability &rarr;</a>
 </article>
-<article style="border-top:1px solid #D9CEB8;padding:22px 0 24px;display:flex;flex-wrap:wrap;gap:6px 24px;align-items:baseline;justify-content:space-between">
-<div style="flex:1 1 300px;min-width:0">
-<h3 style="margin:0 0 4px;font-family:'Fraunces',Georgia,serif;font-weight:600;font-size:24px">Family Room</h3>
-<p style="margin:0 0 8px;font-size:15px;color:#6B5F52">Up to 5 guests &middot; Two family rooms</p>
-<p style="margin:0;font-size:16px;color:#4A3F34">A Super King bed that can be set up as twins, with futon or sofa beds for the rest of the family. En-suite, with Wi-Fi and a TV.</p>
+<article class="rc" style="grid-column:span 3;background:#FFFFFF;border:1px solid #E4DAC6;border-radius:10px;overflow:hidden;display:flex;flex-direction:column">
+<img loading="lazy" decoding="async" width="1200" height="900" src="images/room-single-2.jpg" alt="A single room with an oak chest of drawers, a basin and a window onto the garden" style="display:block;width:100%;height:250px;object-fit:cover;background:#E8DFCE">
+<div style="padding:22px 24px 26px;display:flex;flex-direction:column;gap:10px;flex:1">
+<h3 style="margin:0;font-family:'Fraunces',Georgia,serif;font-weight:600;font-size:24px">Single Room</h3>
+<p style="margin:0;font-size:15px;color:#6B5F52">Sleeps 1 &middot; 1 bed</p>
+<p style="margin:0;font-size:16px;color:#4A3F34;flex:1">A second single room with the same comforts: Wi-Fi, a TV, heating, tea and coffee making, and an en-suite.</p>
+<a href="https://beds24.com/booking2.php?propid=254189" target="_blank" rel="noopener" style="font-weight:700;color:#7A5A27;padding:10px 0;display:inline-block">Check availability &rarr;</a>
 </div>
-<a href="https://beds24.com/booking2.php?propid=254189" target="_blank" rel="noopener" style="font-weight:700;color:#7A5A27;padding:10px 0;display:inline-block;white-space:nowrap">Check availability &rarr;</a>
 </article>
-<div style="border-top:1px solid #D9CEB8"></div>
+<article class="rc" style="grid-column:span 3;background:#FFFFFF;border:1px solid #E4DAC6;border-radius:10px;overflow:hidden;display:flex;flex-direction:column">
+<img loading="lazy" decoding="async" width="1200" height="900" src="images/room-family-1.jpg" alt="A spacious family room with a Super King bed, a sofa and a mauve feature wall" style="display:block;width:100%;height:250px;object-fit:cover;background:#E8DFCE">
+<div style="padding:22px 24px 26px;display:flex;flex-direction:column;gap:10px;flex:1">
+<h3 style="margin:0;font-family:'Fraunces',Georgia,serif;font-weight:600;font-size:24px">Family Room</h3>
+<p style="margin:0;font-size:15px;color:#6B5F52">Up to 5 guests</p>
+<p style="margin:0;font-size:16px;color:#4A3F34;flex:1">A Super King bed that can be set up as twins, with futon or sofa beds for the rest of the family. En-suite, with Wi-Fi and a TV.</p>
+<a href="https://beds24.com/booking2.php?propid=254189" target="_blank" rel="noopener" style="font-weight:700;color:#7A5A27;padding:10px 0;display:inline-block">Check availability &rarr;</a>
 </div>
+</article>
+<article class="rc" style="grid-column:span 3;background:#FFFFFF;border:1px solid #E4DAC6;border-radius:10px;overflow:hidden;display:flex;flex-direction:column">
+<img loading="lazy" decoding="async" width="1200" height="900" src="images/room-family-2.jpg" alt="A family room under the eaves with a large bed, a TV and a tea and coffee area" style="display:block;width:100%;height:250px;object-fit:cover;background:#E8DFCE">
+<div style="padding:22px 24px 26px;display:flex;flex-direction:column;gap:10px;flex:1">
+<h3 style="margin:0;font-family:'Fraunces',Georgia,serif;font-weight:600;font-size:24px">Family Room</h3>
+<p style="margin:0;font-size:15px;color:#6B5F52">Up to 5 guests</p>
+<p style="margin:0;font-size:16px;color:#4A3F34;flex:1">A second family room, with a Super King bed that can be set up as twins, plus futon or sofa beds. En-suite, with Wi-Fi and a TV.</p>
+<a href="https://beds24.com/booking2.php?propid=254189" target="_blank" rel="noopener" style="font-weight:700;color:#7A5A27;padding:10px 0;display:inline-block">Check availability &rarr;</a>
+</div>
+</article>
 </div>
 </section>
 </div>
